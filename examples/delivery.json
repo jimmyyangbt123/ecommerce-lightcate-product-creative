@@ -1,0 +1,16 @@
+{
+  "listings": [
+    {
+      "id": "L1",
+      "pack_counts": [1, 2, 4],
+      "title": "1/2/4pc Camping Lantern with Hook, Tabletop and Hanging Use",
+      "cover_header": "1/2/4pc CAMPING LANTERNS"
+    },
+    {
+      "id": "L2",
+      "pack_counts": [2],
+      "title": "2pc Tabletop and Hanging Lamps",
+      "cover_header": "2pc TABLETOP AND HANGING LAMPS"
+    }
+  ]
+}

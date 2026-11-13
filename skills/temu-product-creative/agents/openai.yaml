@@ -1,0 +1,14 @@
+interface:
+  display_name: TEMU 商品创意总成
+  short_description: 先选类目分析痛点与卖点，解释每图作用后确认图数，交付套图、标题和商家解析
+  default_prompt: 使用 $temu-product-creative，先对话确认商品和类目，再分析消费者、痛点与有据卖点，解释每张图的作用后建议图数；等我确认开工单，再交付套图、标题和商家解析。
+    主图顶部与标题开头都必须标明本链接真实可选件数。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
