@@ -5,7 +5,7 @@ import unittest
 # Run tests against the installed source while developing, the bundled copy after export.
 import os
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(os.environ.get('TEMU_SKILL_SOURCE', str(ROOT / 'skills' / 'temu-product-creative')))
+SOURCE = Path(os.environ.get('PRODUCT_CREATIVE_SKILL_SOURCE', str(ROOT / 'skills' / 'ecommerce-product-creative')))
 spec = importlib.util.spec_from_file_location('check_delivery', SOURCE / 'scripts' / 'check_delivery.py')
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)

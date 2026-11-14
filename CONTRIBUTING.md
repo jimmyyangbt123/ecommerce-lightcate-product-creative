@@ -1,6 +1,5 @@
 # 参与完善
 
-项目作者：Botao Yang。
 
 提交前先看[许可与署名状态](NOTICE.md)。本项目尚未选定开放许可证，外部贡献的接受与授权条件应由作者决定。
 
@@ -17,7 +16,7 @@
 ```bash
 python3 -m unittest discover -s tests -v
 python3 tools/validate_repo.py
-python3 skills/temu-product-creative/scripts/check_delivery.py examples/delivery.json
+python3 skills/ecommerce-product-creative/scripts/check_delivery.py examples/delivery.json
 ```
 
 新增行为规则应附商家式输入与期望行为；有自动检查器的改动加正反例测试。不要仅用关键词是否出现衡量复杂创意质量。

@@ -5,7 +5,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / 'skills' / 'temu-product-creative'
+SKILL = ROOT / 'skills' / 'ecommerce-product-creative'
 
 
 def validate():
@@ -15,10 +15,10 @@ def validate():
         'docs/WORKFLOW.md', 'docs/TESTING.md', 'docs/RELIABILITY.md', 'docs/RELEASE_CHECKLIST.md',
         'examples/STARTERS.md', 'examples/DELIVERY_EXAMPLE.md', 'examples/delivery.json',
         '.github/workflows/validate.yml', 'tests/test_quantity.py',
-        'skills/temu-product-creative/SKILL.md',
-        'skills/temu-product-creative/agents/openai.yaml',
-        'skills/temu-product-creative/scripts/check_delivery.py',
-        'skills/temu-product-creative/references/quantity.md',
+        'skills/ecommerce-product-creative/SKILL.md',
+        'skills/ecommerce-product-creative/agents/openai.yaml',
+        'skills/ecommerce-product-creative/scripts/check_delivery.py',
+        'skills/ecommerce-product-creative/references/quantity.md',
     ]
     for name in required:
         if not (ROOT / name).is_file():
@@ -42,7 +42,7 @@ def validate():
     if entry.exists():
         content = entry.read_text(encoding='utf-8')
         match = re.match(r'^---\n(.*?)\n---\n', content, re.DOTALL)
-        if not match or not re.search(r'^name: temu-product-creative$', match[1], re.MULTILINE):
+        if not match or not re.search(r'^name: ecommerce-product-creative$', match[1], re.MULTILINE):
             errors.append('Invalid or unexpected skill frontmatter name')
         if not match or not re.search(r'^description: \S', match[1], re.MULTILINE):
             errors.append('Missing skill description')

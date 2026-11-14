@@ -1,10 +1,10 @@
-# TEMU 商品创意总成
+# 商品设计工作流
 
-**作者：Botao Yang · 版本：v1.0.0**
+**版本：v1.0.1 - By Jimmy.yang**
 
 一个通过对话组织电商图片、标题和卖点制作的通用 Agent Skill。输入一张或多张产品照片，先认清商品与真实发货内容，再让商家选择类目；Agent 分析购买任务、主动创造卖点、解释每张图为什么存在，经确认后调用宿主工具制作并验收。
 
-项目适用于多种商品，照明类案例较充分；附带照明类目参考树，其他品类需提供或核实对应类目。**这不是 TEMU 官方工具，也不附带官方类目接口、官方刊登许可或独立图像生成服务。**
+项目适用于多种商品，照明类案例较充分；附带照明类目参考树，其他品类需提供或核实对应类目。**本项目不是平台官方工具，也不附带官方类目接口、官方刊登许可或独立图像生成服务。**
 
 ## 核心能力
 
@@ -40,7 +40,7 @@ flowchart TD
 
 ### 支持本地 Skill 目录的宿主
 
-将仓库中的 **整个** [skills/temu-product-creative](skills/temu-product-creative/SKILL.md) 文件夹放入宿主支持的个人 Skill 目录，保持 `references/`、`scripts/`、`assets/`、`agents/` 的相对位置。宿主可能要求重新加载或在新对话中使用；以实际宿主的安装方式为准。
+将仓库中的 **整个** [skills/ecommerce-product-creative](skills/ecommerce-product-creative/SKILL.md) 文件夹放入宿主支持的个人 Skill 目录，保持 `references/`、`scripts/`、`assets/`、`agents/` 的相对位置。宿主可能要求重新加载或在新对话中使用；以实际宿主的安装方式为准。
 
 不要只复制 `SKILL.md` 而漏掉引用模块。Skill 的主要功能不依赖 Python；可选检查器使用 Python 3.10+ 标准库。图像生成、原图绑定、回看和文件输出由宿主提供。
 
@@ -50,7 +50,7 @@ flowchart TD
 
 启动示例：
 
-> 请使用 temu-product-creative，根据这些产品照片制作一套电商图片。先识别商品和真实发货，推荐主辅类目由我选择，再分析消费者、痛点和卖点。解释每张图的作用后推荐数量，等我确认开工单再制作。主图和标题头部都必须有准确件数。
+> 请使用 ecommerce-product-creative，根据这些产品照片制作一套电商图片。先识别商品和真实发货，推荐主辅类目由我选择，再分析消费者、痛点和卖点。解释每张图的作用后推荐数量，等我确认开工单再制作。主图和标题头部都必须有准确件数。
 
 多套示例：
 
@@ -69,7 +69,7 @@ flowchart TD
 
 `pc` 按确认的主商品计数，不把充电线或场景道具相加。多规格表示可选，不是全部随附。件数未知先问；按 pair/set 售卖且计数有歧义时先确认口径。明确的无字主图要求与该规则冲突时，请商家裁定，Agent 不得偷偷省略。
 
-完整规则见 [quantity.md](skills/temu-product-creative/references/quantity.md)。
+完整规则见 [quantity.md](skills/ecommerce-product-creative/references/quantity.md)。
 
 ## 一次制作会交付什么
 
@@ -87,9 +87,9 @@ flowchart TD
 
 | 路径 | 用途 |
 |---|---|
-| [skills/temu-product-creative/SKILL.md](skills/temu-product-creative/SKILL.md) | Agent 入口与硬关卡 |
-| `skills/temu-product-creative/references/` | 对话、事实、类目需求、件数、视觉、生成、交付与验收 |
-| [scripts/check_delivery.py](skills/temu-product-creative/scripts/check_delivery.py) | 可选的声明文本件数检查器 |
+| [skills/ecommerce-product-creative/SKILL.md](skills/ecommerce-product-creative/SKILL.md) | Agent 入口与硬关卡 |
+| `skills/ecommerce-product-creative/references/` | 对话、事实、类目需求、件数、视觉、生成、交付与验收 |
+| [scripts/check_delivery.py](skills/ecommerce-product-creative/scripts/check_delivery.py) | 可选的声明文本件数检查器 |
 | [docs/WORKFLOW.md](docs/WORKFLOW.md) | 人机分工、阶段产物与恢复分支 |
 | [docs/RELIABILITY.md](docs/RELIABILITY.md) | 已有验证、局限与项目自评 |
 | [docs/TESTING.md](docs/TESTING.md) | 自动检查与人工/Agent 验收用例 |
@@ -105,7 +105,7 @@ flowchart TD
 ```bash
 python3 -m unittest discover -s tests -v
 python3 tools/validate_repo.py
-python3 skills/temu-product-creative/scripts/check_delivery.py examples/delivery.json
+python3 skills/ecommerce-product-creative/scripts/check_delivery.py examples/delivery.json
 ```
 
 仓库附带 GitHub Actions 配置，提交后运行同样的离线检查，无需图像模型或 API Key。**这些检查验证结构与声明文本，不能验证图片已经正确显示数量、商品保真或转化表现。**
@@ -118,8 +118,7 @@ python3 skills/temu-product-creative/scripts/check_delivery.py examples/delivery
 
 本目录已准备为 GitHub 发布源码，尚未替作者创建或发布远程仓库。文档未附真实商家照片、账号、订单和API密钥。公开前请作者完成 [发布清单](docs/RELEASE_CHECKLIST.md)。
 
-## 作者与许可
+## 归属与许可
 
-**Botao Yang**：项目作者，负责业务目标、需求设计、迭代决策与最终发布。文档和指令实现使用 AI 辅助。
 
-本发布包没有替作者选择或授予开放许可证；许可状态见 [NOTICE.md](NOTICE.md)。如计划以开源许可证授权他人复制、修改与分发，请作者发布前补充所选择的 `LICENSE`。署名不代表 TEMU 官方背书。
+项目归属仅在必要说明中保留，文档和实现使用AI辅助。本发布包没有替作者选择或授予开放许可证；许可状态见 [NOTICE.md](NOTICE.md)。如计划以开源许可证授权他人复制、修改与分发，请作者发布前补充所选择的 `LICENSE`。署名不代表 平台 官方背书。

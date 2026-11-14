@@ -15,7 +15,7 @@
 ```bash
 python3 -m unittest discover -s tests -v
 python3 tools/validate_repo.py
-python3 skills/temu-product-creative/scripts/check_delivery.py examples/delivery.json
+python3 skills/ecommerce-product-creative/scripts/check_delivery.py examples/delivery.json
 ```
 
 测试使用Python标准库，覆盖单件/多件标签、乱序归一、最低规格遗漏、标题末尾数量、主图文案不匹配、串入别的链接选项、重复ID、非法计数和命令行退出状态。
